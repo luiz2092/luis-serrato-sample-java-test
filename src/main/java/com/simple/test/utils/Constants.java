@@ -8,6 +8,16 @@ package com.simple.test.utils;
 
 public class Constants {
 
+	public static final String API_TITLE = "luis-serrato-sample-test";
+	
+	public static final String API_DESCRIPTION = "Api Test for PayClip";
+	
+	public static final String API_CURRENT_VERSION = "v1";
+	
+	public static final String CONTACT_NAME = "Luis Serrato";
+	
+	public static final String CONTACT_EMAIL = "luiz.deco@hotmail.com";
+	
 	public static final String ROOT_PATH = "transactions/";
 
 	public static final String CSV_EXTENSION = ".csv";
