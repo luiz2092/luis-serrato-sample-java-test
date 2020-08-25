@@ -1,37 +1,34 @@
 # luis-serrato-sample-java-test
 Transaction sample test
 
-# Installation (Requirements)
-JAVA 8 (To run the .jar)
-Gradle 5.2.1 or + (Just in case you want to compile the source code)
-An Ide of your preference
+# Requirements
+- JAVA 8
+- Gradle 5.2.1 or +
+- Git console 
 
-# Installation (Run JAR)
-- Under the root folder "luis-serrato-sample-java-test" there is "simple-test-luis-serrato-0.0.1-SNAPSHOT.jar"
-- Open a command console and execute java -jar simple-test-luis-serrato-0.0.1-SNAPSHOT.jar (port 8081)
-
-# Installation (Compile JAR)
-- Under the root folder "luis-serrato-sample-java-test" open a command console and execute ./gradlew build
+# Installation
+- Clone the reposotiry https://github.com/luiz2092/luis-serrato-sample-java-test.git
+- Go to the folder 'luis-serrato-sample-java-test' and compile the project with 'gradle build'
+- Go to \build\libs and run the generated jar with 'java -jar simple-test-luis-serrato-0.0.1-SNAPSHOT.jar'
+- If the init was successful, there will be a new folder called 'transactions', this is where all the transactions will be stored.
 
 # Usage
-Under the root folder "luis-serrato-sample-java-test there is "transactions" folder, this is where all the transactions
-will be stored.
+```` Operations ´´´´
 
-```` Operations
+- ADD TRANSACTION
 
-# ADD TRANSACTION
 Receives userId and requestBody params.
+Request: POST http://[$host]:8081/v1/transactions/{userId}
 
-Request:
-
-POST http://[$host]:8081/v1/transactions/{userId}
-params 
-	userId: long
+params
+    userId: Long
 	requestBody: JSON
-	
-example	
-	http://localhost:8081/v1/transactions/3399
-	body:
+
+headers
+'Content-Type: application/json' 
+
+example: http://localhost:8081/v1/transactions/3399
+requestBody:
 	{
 		"date":"2020-04-12",
 		"description":"TForTest",
@@ -47,16 +44,14 @@ Response:
 		"amount": 17.2
 	}
 
-# SHOW TRANSACTION
+- SHOW TRANSACTION
+
 Receives userId and transactionId params.
+Request: GET http://[$host]:8081/v1/transactions/{userId}/{transactionId}
 
-Request:
-
-GET http://[$host]:8081/v1/transactions/{userId}/{transactionId}
 params 
 	userId: Long
 	transactionId: String
-
 example
 	http://localhost:8081/v1/transactions/3399/ad8fe4f1-dd94-436d-83ff-8ab3168648ae
 
@@ -70,7 +65,7 @@ Response:
 		"amount": 17.2
 	}
 	
-# LIST TRANSACTIONS
+- LIST TRANSACTIONS
 Receives userId param.
 
 Request:
@@ -96,7 +91,7 @@ Response:
 		]
 	}
 
-# SUM TRANSACTIONS
+- SUM TRANSACTIONS
 Receives userId param.
 
 Request:
@@ -115,7 +110,7 @@ Response:
 		"sum": 17.2
 	}
 
-# TRANSACTIONS REPORT SERVICE
+- TRANSACTIONS REPORT SERVICE
 Receives userId param.
 
 Request:
@@ -142,7 +137,7 @@ Response:
 		]
 	}
 	
-# RANDMON SINGLE TRANSACTION
+- RANDMON SINGLE TRANSACTION
 
 Request:
 GET http://[$host]:8081/v1/transactions/random
@@ -159,4 +154,3 @@ Response:
 		"description": "TForTest",
 		"amount": 17.2
 	}
-	
