@@ -9,8 +9,10 @@ Transaction sample test
 # Installation
 - Clone the reposotiry https://github.com/luiz2092/luis-serrato-sample-java-test.git
 - Go to the folder 'luis-serrato-sample-java-test' and compile the project with 'gradle build'
-- Go to \build\libs and run the generated jar with 'java -jar simple-test-luis-serrato-0.0.1-SNAPSHOT.jar'
+- Go to /build/libs and run the generated jar with 'java -jar simple-test-luis-serrato-0.0.1-SNAPSHOT.jar'
 - If the init was successful, there will be a new folder called 'transactions', this is where all the transactions will be stored.
+- The api port is 8081
+- Make sure that you are allowed to create folders in the project directory
 
 # Usage
 ```` Operations ´´´´
