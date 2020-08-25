@@ -14,6 +14,12 @@ import com.opencsv.CSVWriter;
 import com.simple.test.utils.Constants;
 import com.simple.test.utils.Utils;
 
+/**
+ * 
+ * @author Luis Serrato.
+ *
+ */
+
 @SpringBootApplication
 public class SimpleTestLuisSerratoApplication {
 
@@ -25,6 +31,12 @@ public class SimpleTestLuisSerratoApplication {
 	public void started() {
 		TimeZone.setDefault(TimeZone.getTimeZone("Mexico/General"));
 	}
+
+	/**
+	 * This methos will create the root folder with some examplet.
+	 * 
+	 * @throws IOException
+	 */
 
 	@PostConstruct
 	public void createRoot() throws IOException {

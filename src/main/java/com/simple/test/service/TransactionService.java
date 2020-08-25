@@ -30,6 +30,10 @@ import com.simple.test.utils.Utils;
 @Service
 public class TransactionService implements ITransactionService {
 
+	/**
+	 * Add new transaction to an user folder (a transaction is a csv file)
+	 */
+
 	@Override
 	public TransactionModel addTransaction(TransactionModel transaction, Integer userId) throws IOException {
 		String userDirPath = Constants.ROOT_PATH.concat(userId.toString());
@@ -56,6 +60,9 @@ public class TransactionService implements ITransactionService {
 		return transaction;
 	}
 
+	/**
+	 * Retrieve an specific user transaction.
+	 */
 	@Override
 	public TransactionModel showTransaction(Integer userId, String transactionId) throws IOException {
 
@@ -71,6 +78,9 @@ public class TransactionService implements ITransactionService {
 
 	}
 
+	/**
+	 * Retrieve all the transactions from a user.
+	 */
 	@Override
 	public TransactionsModel listTransactions(Integer userId) throws IOException {
 		File userFolder = new File(Constants.ROOT_PATH.concat(userId.toString()));
@@ -82,6 +92,9 @@ public class TransactionService implements ITransactionService {
 		return transactionResponse;
 	}
 
+	/**
+	 * Sum the amount of all transactions from a user.
+	 */
 	@Override
 	public TransactionModel sumTransaction(Integer userId) throws IOException {
 		File userFolder = new File(Constants.ROOT_PATH.concat(userId.toString()));
@@ -97,6 +110,9 @@ public class TransactionService implements ITransactionService {
 		return transactionSum;
 	}
 
+	/**
+	 * Reatrieve the transanctions gruoup by weeks from a user.
+	 */
 	@Override
 	public TransactionsModel reportTransactions(Integer userId) throws IOException {
 		File userFolder = new File(Constants.ROOT_PATH.concat(userId.toString()));
@@ -130,6 +146,9 @@ public class TransactionService implements ITransactionService {
 		return response;
 	}
 
+	/**
+	 * Retreieve a random transaction from a random user.
+	 */
 	@Override
 	public TransactionModel showRandomTransaction() throws IOException {
 
