@@ -2,7 +2,7 @@
 Transaction sample test
 
 # Requirements
-- JAVA 8
+- JDK 8
 - Gradle 5.2.1 or +
 - Git console 
 
